@@ -1,0 +1,14 @@
+# IDE 配置文件
+.idea/
+.vscode/
+
+# Python 运行时产生的缓存
+__pycache__/
+*.py[cod]
+
+# 本地运行数据
+data/
+
+# 系统文件（Mac/Win都有）
+.DS_Store
+Thumbs.db
