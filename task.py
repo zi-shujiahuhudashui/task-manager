@@ -41,7 +41,6 @@ class Task:
     # @classmethod 是类方法。它不需要对象实例（t1）来调用，直接用 Task.from_dict() 就能调用。
     @classmethod
     def from_dict(cls, data: dict) -> "Task":
-        # TODO: 你来实现
         # 如果 created_at_str 有值，就把它从字符串转回 datetime 对象；
         # 如果是空的（比如你手贱删了它），就默认用当前时间 datetime.now()。
         created_at_str = data.get("created_at")
