@@ -75,7 +75,6 @@ class TaskManager:
 
     def uncomplete_task(self, index: int) -> bool:
         """取消完成（逻辑类似 complete_task，完成后要把 completed_at 设为 None）"""
-        # TODO: 自己写，参考 complete_task
         if index < 1 or index > len(self.tasks):
             return False
         task = self.tasks[index - 1]
@@ -105,8 +104,46 @@ class TaskManager:
         """
         # 提示：用 self._undo_stack.pop() 拿出历史，赋值给 self.tasks
         # TODO: 实现
-        if not self._undo_stack: 
+        if not self._undo_stack:
             return False
         self.tasks= self._undo_stack.pop()
         self.storage.save(self.tasks)
         return True
+
+if __name__ == '__main__':
+    test_file="data/test_manager.json"
+    import os
+    if os.path.exists(test_file):
+        os.remove(test_file)
+    print("---开始测试 TaskManager---")
+    storage = JsonStorage(test_file)
+    manager = TaskManager(storage)
+    t1=manager.add_task("完成测试","test_manager")
+    t2=manager.add_task("完成mian","任务管理器的mian")
+    print(f"添加后当前的任务数：{len(manager.list_tasks())}")
+    manager.complete_task(1)
+    print(f"任务“完成测试”的状态：{manager.list_tasks()[0].completed}")
+    manager.undo()
+    print(f"撤销一次后，任务“完成测试”的完成状态：{manager.list_tasks()[0].completed}")
+    manager.delete_task(2)
+    print(f"删除任务“完成mian”,当前任务数{len(manager.list_tasks())}")
+    manager.undo()
+    print(f"撤销删除后，当前任务数：{len(manager.list_tasks())}")
+    res=manager.complete_task(99)
+    print(f"操作越界，返回res:{res}")
+    print("--- 测试结束，如果所有数字都对，说明大管家逻辑完美！ ---")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

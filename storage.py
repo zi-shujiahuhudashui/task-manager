@@ -47,8 +47,8 @@ class JsonStorage:
 
 
 if __name__ == "__main__":
-    # 测试代码，随便写个路径比如 test_data.json
-    storage = JsonStorage("data/test_data.json")
+    # 测试代码，随便写个路径比如 test_storage.json
+    storage = JsonStorage("data/test_storage.json")
 
     # 1. 测试空文件加载
     print("加载初始状态:", storage.load())
