@@ -22,3 +22,38 @@ task-manager/
 ├── manager.py    # 业务逻辑层：管理任务列表，维护撤销栈
 ├── main.py       # 交互层：命令行解析与用户 I/O
 └── docs/         # 项目设计与需求文档
+```
+
+## 🚀 快速开始
+
+### 一、
+
+1. 克隆项目到本地：
+
+   bash
+
+   ```
+   git clone [你的GitHub仓库链接]
+   cd task-manager
+   ```
+
+   
+
+2. 运行程序：
+
+   bash
+
+   ```
+   python main.py
+   ```
+
+   
+
+3. 输入 `help` 查看所有可用指令。
+
+### 二、
+
+1. 下载压缩包
+2. 在本地解压
+3. 用pycharm打开
+4. 找到main文件并运行

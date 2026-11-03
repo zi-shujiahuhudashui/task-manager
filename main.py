@@ -10,7 +10,7 @@ def print_task_list(tasks):
         print("-" * 30)
         for i, t in enumerate(tasks, start=1):
             status = "[√]" if t.completed else "[ ]"
-            print(f"{i}. {t.title} {status}")
+            print(f"{i}. {t.title} {t.description} {status}")
             if t.description:
                 print(f"       备注: {t.description}")
         print("-" * 30)
@@ -68,7 +68,7 @@ def main():
                     print("-" * 30)
                     for i, t in enumerate(tasks, start=1):
                         status = "[√]" if t.completed else "[ ]"
-                        print(f"{i}. {t.title} {status}")
+                        print(f"{i}. {t.title} {t.description} {status}")
                     print("-" * 30)
 
             elif cmd == "done":
